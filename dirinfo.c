@@ -19,15 +19,15 @@ int main() {
 
   printf("Total Directory Size: %d Bytes\n", total);
 
-  /*
-  if(readdir(d)){
+  /* if(!readdir(d)){
     printf("NO D\n");
     return 0;
     }
   while(readdir(d)){
     entry = readdir(d);
     printf("%s", entry->d_name);
-    }*/
+    }
+  */
   closedir(d);
   return 0;
 }
