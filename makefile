@@ -5,5 +5,4 @@ run:
 	./a.out
 
 clean:
-	rm *.o
 	rm a.out
