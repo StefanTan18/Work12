@@ -4,9 +4,9 @@
 #include <dirent.h>
 #include <sys/types.h>
 
-int main() {
+int dirfiles(char * dirname) {
   DIR * d;
-  d = opendir(".");
+  d = opendir(dirname[1]);
   struct dirent * entry = readdir(d);
   struct stat meta;
   int total = 0;
@@ -20,7 +20,7 @@ int main() {
   }
   printf("Total Directory Size: %d Bytes\n", total);
 
-  d = opendir(".");
+  d = opendir(dirname[1]);
   entry = readdir(d);
 
   printf("Directories:\n");
@@ -43,5 +43,10 @@ int main() {
   }
   
   closedir(d);
+  return 0;
+}
+
+int main(int argc, char *argv[]){
+  dirfiles(argv[1]);
   return 0;
 }
